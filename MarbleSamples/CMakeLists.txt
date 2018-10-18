@@ -1,0 +1,5 @@
+add_subdirectory(hd)
+add_subdirectory(hd_enc)
+add_subdirectory(hd_batched)
+add_subdirectory(ads)
+add_subdirectory(faces)

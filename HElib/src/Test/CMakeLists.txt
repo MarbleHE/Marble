@@ -1,0 +1,12 @@
+file(GLOB TEST_FILES RELATIVE "${PROJECT_SOURCE_DIR}/src/test" "${PROJECT_SOURCE_DIR}/src/test" "Test_*.cpp")
+
+if (ENABLE_TEST)
+    foreach(TEST_FILE ${TEST_FILES})
+        STRING(REGEX REPLACE ".cpp$" ".o" TARGET_NAME ${TEST_FILE})
+        add_executable(${TARGET_NAME} ${TEST_FILE})
+        target_link_libraries(${TARGET_NAME} ${RUN_LIB})
+        if (ENABLE_DEBUG)
+            target_compile_definitions(${TARGET_NAME} PRIVATE DEBUG_PRINTOUT=1)
+        endif(ENABLE_DEBUG)
+    endforeach(TEST_FILE)
+endif(ENABLE_TEST)
