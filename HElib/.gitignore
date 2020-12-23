@@ -10,6 +10,7 @@ src/*_x.dSYM
 src/*.sh
 src/*.bin
 src/*.txt
+!src/CMakeLists.txt
 src/misc/*.bin
 src/misc/*.txt
 
